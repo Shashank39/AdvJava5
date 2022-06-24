@@ -14,7 +14,7 @@ steps{
 
 echo "Building the checked out project...";
 
-bat "mvn clean install";
+bat "clean install";
 
 }
 
