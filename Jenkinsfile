@@ -28,7 +28,7 @@ pipeline {
         }
 		}
       }
-  } 
+  
     
      stage('Artifactory Upload') {
       agent any
