@@ -1,9 +1,7 @@
 pipeline {
     agent any
-    tools {
-        maven 'Maven 3.3.9'
-        jdk 'jdk8'
-    }
+    
+    
     stages {
         stage ('Initialize') {
             steps {
@@ -13,16 +11,32 @@ pipeline {
                 '''
             }
         }
+stage('Maven Installation')
 
-        stage ('Build') {
-            steps {
-                sh 'mvn clean package' 
-            }
-            post {
-                success {
-                    junit 'target/surefire-reports/**/*.xml' 
-                }
-            }
-        }
-    }
+{
+
+steps{
+
+echo "Building the checked out project...";
+
+bat "mvn clean install";
+
+}
+
+}
+
+stage('Deploy')
+
+{
+
+steps{
+
+echo "Deploying Project";
+
+}
+
+}
+
+}
+
 }
